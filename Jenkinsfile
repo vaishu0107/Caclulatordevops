@@ -14,7 +14,7 @@ pipeline {
     }
       stage('DockerHub'){
     steps{
- 	    withDockerRegistry([ credentialsId: "DockerhubPush", url: "" ]){
+ 	    withDockerRegistry([ credentialsId: "DockerHubPush", url: "" ]){
  	    sh 'docker push vaishu0107/calculatordocker'
  	  }
      }
