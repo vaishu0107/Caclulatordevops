@@ -14,6 +14,12 @@ public class calculator{
       switch(op) {
          case '+': ans = num1 + num2;
             break;
+           case '-': ans = num1 - num2;
+            break;
+            case '*': ans = num1 * num2;
+            break;
+            case '/': ans = num1 / num2;
+            break;
          
          default:  System.out.printf("Error! Enter correct operator");
             return;
