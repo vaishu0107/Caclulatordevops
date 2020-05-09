@@ -19,5 +19,20 @@ pipeline {
  	  }
      }
    }
+        stage('Deploy using Rundeck') {
+      agent any
+      steps {
+        script {
+          step([$class: "RundeckNotifier",
+          rundeckInstance: "Rundeck",
+          shouldFailTheBuild: true,
+          shouldWaitForRundeckJob: true,
+          options: """
+            BUILD_VERSION=$BUILD_NUMBER
+          """,
+          jobId: "598fa64f-7862-459f-aebb-86156b82aaf8"])
+        }
+      }
+    }
    }
  }
